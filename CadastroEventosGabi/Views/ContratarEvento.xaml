@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventosGabi.Views.ContratarEvento"
+             Title="ContratarEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="SteelBlue">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                     Padding="10"
+                     Spacing="10">
+
+       
+        <Label Text="Contratar Evento"
+           FontFamily="Kalam"
+           FontSize="50"
+           TextColor="black" />
+
+
+        <Frame Padding="10" Margin="10" BackgroundColor="LightSteelBlue">
+            <VerticalStackLayout Spacing="10">
+
+
+                <Label Text="Nome do Evento"
+                TextTransform="Uppercase"
+                FontSize="Subtitle"
+                TextColor="black"/>
+                <Entry x:Name="nome_evento" Placeholder="Digite o Nome do Evento" TextColor="black"/>
+
+          
+                <Label Text="Período do Evento"
+                   TextTransform="Uppercase"
+                   FontSize="Subtitle"
+                   TextColor="black"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="Data de início:" TextColor="black" />
+                    <DatePicker x:Name="dt_inicio"
+                            DateSelected="dt_inicio_DateSelected"
+                            Format="dd/MM/yyyy" 
+                            TextColor="black"/>
+                    
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Data de término:" TextColor="black" />
+                    <DatePicker x:Name="dt_final"
+                            Format="dd/MM/yyyy"
+                            TextColor="black"/>
+                    
+                </HorizontalStackLayout>
+
+                <Label Text="Numero de Participantes"
+                TextTransform="Uppercase"
+                FontSize="Subtitle"
+                TextColor="black"/>
+                <Entry x:Name="nm_pessoas" Placeholder="Digite o numero de Participante" 
+                   Keyboard="Numeric" TextColor="black"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Padding="10" Margin="10" BackgroundColor="LightSteelBlue">
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="Escolha seu Local"
+                   TextTransform="Uppercase"
+                   FontSize="Subtitle"
+                   TextColor="black"/>
+
+                <Entry x:Name="local" Placeholder="Local do evento" 
+   Keyboard="Numeric" TextColor="black"/>
+            </VerticalStackLayout>
+        </Frame>
+
+
+
+        <Frame Padding="10" Margin="10" BackgroundColor="LightSteelBlue">
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="Digite o custo por Participante"
+                TextTransform="Uppercase"
+                FontSize="Subtitle"
+                TextColor="black"/>
+                <Entry x:Name="custo_pessoas" Placeholder="Custo por Participante (R$)" 
+           Keyboard="Numeric" TextColor="black"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+
+
+        <Button Text="Cadastrar Evento"  BackgroundColor="LightSteelBlue" Clicked="Button_Clicked" TextColor="black"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

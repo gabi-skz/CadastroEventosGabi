@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventosGabi.Views.EventoContratado"
+             NavigationPage.HasNavigationBar="False"
+            BackgroundColor="SteelBlue">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+        <Label Text="Descrição do Evento"
+                FontFamily="Kalam"
+                FontSize="50"
+                TextColor="black" />
+
+        <Frame Margin="10" BackgroundColor="LightSteelBlue">
+            <StackLayout  Orientation="Horizontal" >
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Nome do evento: "  TextColor="black"/>
+                    <Label Text="{Binding NomeEvento}"
+               TextColor="black"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10" BackgroundColor="LightSteelBlue">
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="Auto, Auto">
+                <Label Grid.Row="0" Grid.Column="0" Text="Data de Início:"  TextColor="black"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Data de Término:" TextColor="black" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Duração:"  TextColor="black"/>
+
+                <Label Grid.Row="1" Grid.Column="0" 
+                       Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="black" />
+
+                <Label Grid.Row="1" Grid.Column="1" 
+                       Text="{Binding DataFinal, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="black" />
+
+                <Label Grid.Row="1" Grid.Column="2" 
+                       Text="{Binding Duracao}"
+                       TextColor="black"/>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10" BackgroundColor="LightSteelBlue">
+            <StackLayout  Orientation="Horizontal" >
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Número de Participantes: "  TextColor="black"/>
+                    <Label Text="{Binding NumPessoas}" 
+                   TextColor="black" />
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10" BackgroundColor="LightSteelBlue">
+            <StackLayout  Orientation="Horizontal" >
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Local do evento: " TextColor="black" />
+                    <Label Text="{Binding LocalEvento}" 
+                   TextColor="black" />
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10" BackgroundColor="LightSteelBlue">
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="Custo Total: " TextColor="black" />
+                <Label Text="{Binding CustoTotal, StringFormat='{}{0:c}'}  "
+                       TextColor="black"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"
+                BackgroundColor="LightSteelBlue"/>
+
+    </VerticalStackLayout>
+</ContentPage>
